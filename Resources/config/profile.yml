@@ -1,0 +1,12 @@
+services:
+    lightsaml.idp.profile.authn_request:
+      class: LightSaml\Idp\Builder\Profile\WebBrowserSso\Idp\SsoIdpReceiveAuthnRequestProfileBuilder
+      arguments:
+        - "@lightsaml.container.build"
+      public: true
+
+    lightsaml.idp.profile.send_response_factory:
+      class: SchoolIT\LightSamlIdpBundle\Builder\Profile\WebBrowserSso\Idp\SsoIdpSendResponseProfileBuilderFactory
+      arguments:
+        - "@lightsaml.container.build"
+      public: true
