@@ -24,7 +24,7 @@ class LightSamlIdpExtension extends Extension {
         $loader->load('profile.yml');
         $loader->load('services.yml');
 
-        $definition = $container->getDefinition('lightsaml.idp.request_listener');
+        $definition = $container->getDefinition(SessionRequestStorage::class);
         $definition->setArgument(1, SessionRequestStorage::DEFAULT_PARAMETERNAME);
         $definition->setArgument(2, isset($config['logger']) ? new Reference($config['logger']) : null);
     }

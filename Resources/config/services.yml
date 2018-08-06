@@ -1,14 +1,10 @@
 services:
-  lightsaml.idp.request_listener:
-    class: SchoolIT\LightSamlIdpBundle\EventListener\SamlRequestListener
-    arguments:
-      - "@lightsaml.idp.request_storage"
-    tags:
-      - { name: kernel.event_subscriber }
-    public: true
+  SchoolIT\LightSamlIdpBundle\EventListener\SamlRequestListener:
+      autowire: true
+      autoconfigure: true
 
-  lightsaml.idp.request_storage:
-    class: SchoolIT\LightSamlIdpBundle\RequestStorage\SessionRequestStorage
-    arguments:
-      - "@request_stack"
-    public: true
+  SchoolIT\LightSamlIdpBundle\RequestStorage\RequestStorageInterface:
+      alias: SchoolIT\LightSamlIdpBundle\RequestStorage\SessionRequestStorage
+
+  SchoolIT\LightSamlIdpBundle\RequestStorage\SessionRequestStorage:
+      autowire: true
