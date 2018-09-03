@@ -1,6 +1,6 @@
 {
     "name": "schoolit/lightsaml-idp-bundle",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "type": "symfony-bundle",
     "license": "MIT",
     "require": {
