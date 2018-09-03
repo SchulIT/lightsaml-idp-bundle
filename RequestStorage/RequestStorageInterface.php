@@ -10,6 +10,8 @@ namespace SchoolIT\LightSamlIdpBundle\RequestStorage;
 interface RequestStorageInterface {
     public function save();
 
+    public function has(): bool;
+
     public function load();
 
     public function clear();

@@ -91,4 +91,16 @@ class SessionRequestStorage implements RequestStorageInterface {
             return;
         }
     }
+
+    public function has(): bool {
+        $request = $this->requestStack->getMasterRequest();
+        $session = $request->getSession();
+
+        if($session === null) {
+            $this->logger->debug('Do not save any SAML request as no session is associated to the current request');
+            return false;
+        }
+
+        return $session->has($this->parameterName);
+    }
 }
