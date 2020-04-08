@@ -30,7 +30,9 @@ class Configuration implements ConfigurationInterface {
                 ->scalarNode('sp_entity_store')
                     ->isRequired()
                 ->end()
-                ->scalarNode('logger')->end()
+                ->scalarNode('logger')
+                    ->defaultValue('monolog.logger')
+                ->end()
             ->end();
 
         return $treeBuilder;
