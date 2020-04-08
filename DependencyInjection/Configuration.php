@@ -11,7 +11,15 @@ class Configuration implements ConfigurationInterface {
      * @inheritDoc
      */
     public function getConfigTreeBuilder() {
-        $treeBuilder = new TreeBuilder();
+        $treeBuilder = new TreeBuilder('light_saml_sp');
+
+        if (method_exists($treeBuilder, 'getRootNode')) {
+            $root = $treeBuilder->getRootNode();
+        } else {
+            // BC layer for symfony/config 4.1 and older
+            $root = $treeBuilder->root('light_saml_sp');
+        }
+
         $root = $treeBuilder->root('lightsaml_idp');
 
         $root
