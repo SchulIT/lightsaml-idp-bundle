@@ -50,6 +50,12 @@ class SessionRequestStorage implements RequestStorageInterface {
 
     public function load() {
         $request = $this->requestStack->getMasterRequest();
+
+        if($request->query->has($this->parameterName)) {
+            // Handle current HTTP-Redirect Binding
+            return;
+        }
+
         $session = $request->getSession();
 
         if($session === null) {
@@ -94,6 +100,13 @@ class SessionRequestStorage implements RequestStorageInterface {
 
     public function has(): bool {
         $request = $this->requestStack->getMasterRequest();
+
+        if($request->query->has($this->parameterName)) {
+            // HTTP-Redirect Binding
+            return true;
+        }
+
+        // Query previous HTTP-POST Bindings
         $session = $request->getSession();
 
         if($session === null) {
