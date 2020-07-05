@@ -1,8 +1,8 @@
 <?php
 
-namespace SchoolIT\LightSamlIdpBundle\DependencyInjection\CompilerPass;
+namespace SchulIT\LightSamlIdpBundle\DependencyInjection\CompilerPass;
 
-use SchoolIT\LightSamlIdpBundle\DependencyInjection\Configuration;
+use SchulIT\LightSamlIdpBundle\DependencyInjection\Configuration;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;

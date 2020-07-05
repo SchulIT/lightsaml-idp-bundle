@@ -1,6 +1,6 @@
 <?php
 
-namespace SchoolIT\LightSamlIdpBundle\RequestStorage;
+namespace SchulIT\LightSamlIdpBundle\RequestStorage;
 
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;

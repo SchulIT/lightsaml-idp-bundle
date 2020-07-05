@@ -1,6 +1,6 @@
 <?php
 
-namespace SchoolIT\LightSamlIdpBundle\RequestStorage;
+namespace SchulIT\LightSamlIdpBundle\RequestStorage;
 
 /**
  * The request storage stores an incoming SAML request in order to process it somewhen afterwards. This is useful

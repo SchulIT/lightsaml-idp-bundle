@@ -1,6 +1,6 @@
 <?php
 
-namespace SchoolIT\LightSamlIdpBundle\Builder\Profile\WebBrowserSso\Idp;
+namespace SchulIT\LightSamlIdpBundle\Builder\Profile\WebBrowserSso\Idp;
 
 use LightSaml\Build\Container\BuildContainerInterface;
 use LightSaml\Builder\Action\ActionBuilderInterface;

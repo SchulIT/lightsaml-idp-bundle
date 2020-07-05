@@ -1,6 +1,6 @@
 <?php
 
-namespace SchoolIT\LightSamlIdpBundle\DependencyInjection\CompilerPass;
+namespace SchulIT\LightSamlIdpBundle\DependencyInjection\CompilerPass;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

@@ -3,6 +3,6 @@ services:
         arguments:
             - "@lightsaml.container.build"
 
-    SchoolIT\LightSamlIdpBundle\Builder\Profile\WebBrowserSso\Idp\SsoIdpSendResponseProfileBuilderFactory:
+    SchulIT\LightSamlIdpBundle\Builder\Profile\WebBrowserSso\Idp\SsoIdpSendResponseProfileBuilderFactory:
         arguments:
           - "@lightsaml.container.build"

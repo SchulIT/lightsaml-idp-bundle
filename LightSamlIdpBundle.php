@@ -1,10 +1,10 @@
 <?php
 
-namespace SchoolIT\LightSamlIdpBundle;
+namespace SchulIT\LightSamlIdpBundle;
 
-use SchoolIT\LightSamlIdpBundle\DependencyInjection\CompilerPass\AddEntityStoreCompilerPass;
-use SchoolIT\LightSamlIdpBundle\DependencyInjection\CompilerPass\ReplaceOwnEntityProviderCompilerPass;
-use SchoolIT\LightSamlIdpBundle\DependencyInjection\LightSamlIdpExtension;
+use SchulIT\LightSamlIdpBundle\DependencyInjection\CompilerPass\AddEntityStoreCompilerPass;
+use SchulIT\LightSamlIdpBundle\DependencyInjection\CompilerPass\ReplaceOwnEntityProviderCompilerPass;
+use SchulIT\LightSamlIdpBundle\DependencyInjection\LightSamlIdpExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

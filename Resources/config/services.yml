@@ -1,10 +1,10 @@
 services:
-  SchoolIT\LightSamlIdpBundle\EventListener\SamlRequestListener:
+  SchulIT\LightSamlIdpBundle\EventListener\SamlRequestListener:
       autowire: true
       autoconfigure: true
 
-  SchoolIT\LightSamlIdpBundle\RequestStorage\RequestStorageInterface:
-      alias: SchoolIT\LightSamlIdpBundle\RequestStorage\SessionRequestStorage
+  SchulIT\LightSamlIdpBundle\RequestStorage\RequestStorageInterface:
+      alias: SchulIT\LightSamlIdpBundle\RequestStorage\SessionRequestStorage
 
-  SchoolIT\LightSamlIdpBundle\RequestStorage\SessionRequestStorage:
+  SchulIT\LightSamlIdpBundle\RequestStorage\SessionRequestStorage:
       autowire: true

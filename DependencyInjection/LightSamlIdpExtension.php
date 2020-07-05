@@ -1,8 +1,8 @@
 <?php
 
-namespace SchoolIT\LightSamlIdpBundle\DependencyInjection;
+namespace SchulIT\LightSamlIdpBundle\DependencyInjection;
 
-use SchoolIT\LightSamlIdpBundle\RequestStorage\SessionRequestStorage;
+use SchulIT\LightSamlIdpBundle\RequestStorage\SessionRequestStorage;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader;

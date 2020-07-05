@@ -1,8 +1,8 @@
 <?php
 
-namespace SchoolIT\LightSamlIdpBundle\EventListener;
+namespace SchulIT\LightSamlIdpBundle\EventListener;
 
-use SchoolIT\LightSamlIdpBundle\RequestStorage\RequestStorageInterface;
+use SchulIT\LightSamlIdpBundle\RequestStorage\RequestStorageInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
 

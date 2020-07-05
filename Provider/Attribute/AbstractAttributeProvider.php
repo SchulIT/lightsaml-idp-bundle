@@ -1,6 +1,6 @@
 <?php
 
-namespace SchoolIT\LightSamlIdpBundle\Provider\Attribute;
+namespace SchulIT\LightSamlIdpBundle\Provider\Attribute;
 
 use LightSaml\Context\Profile\AssertionContext;
 use LightSaml\Context\Profile\ProfileContext;
