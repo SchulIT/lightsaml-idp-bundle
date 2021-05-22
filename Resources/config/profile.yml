@@ -1,4 +1,7 @@
 services:
+    _defaults:
+        autowire: true
+
     LightSaml\Idp\Builder\Profile\WebBrowserSso\Idp\SsoIdpReceiveAuthnRequestProfileBuilder: ~
 
     SchulIT\LightSamlIdpBundle\Builder\Profile\WebBrowserSso\Idp\SsoIdpSendResponseProfileBuilderFactory: ~
