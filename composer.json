@@ -9,7 +9,7 @@
         "symfony/flex": "^1.0",
         "symfony/framework-bundle": "^4.4|^5.0",
         "symfony/yaml": "^4.4|^5.0",
-        "lightsaml/lightsaml-idp": "^1.0",
+        "lightsaml2/lightsaml-idp": "dev-master",
         "symfony/security-core": "^4.4|^5.0"
     },
     "autoload": {
