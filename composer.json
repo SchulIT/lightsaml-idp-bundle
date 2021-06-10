@@ -1,6 +1,5 @@
 {
     "name": "schulit/lightsaml-idp-bundle",
-    "version": "1.0.0",
     "type": "symfony-bundle",
     "license": "MIT",
     "require": {
@@ -9,7 +8,7 @@
         "symfony/flex": "^1.0",
         "symfony/framework-bundle": "^4.4|^5.0",
         "symfony/yaml": "^4.4|^5.0",
-        "lightsaml2/lightsaml-idp": "dev-master",
+        "lightsaml2/lightsaml-idp": "^2.0",
         "symfony/security-core": "^4.4|^5.0"
     },
     "autoload": {
