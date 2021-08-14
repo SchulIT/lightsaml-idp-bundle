@@ -4,6 +4,7 @@ namespace SchulIT\LightSamlIdpBundle\RequestStorage;
 
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 class SessionRequestStorage implements RequestStorageInterface {
@@ -22,7 +23,7 @@ class SessionRequestStorage implements RequestStorageInterface {
     }
 
     public function save() {
-        $request = $this->requestStack->getMasterRequest();
+        $request = $this->getMainRequest($this->requestStack);
         $session = $request->getSession();
 
         if($session === null) {
@@ -49,7 +50,7 @@ class SessionRequestStorage implements RequestStorageInterface {
     }
 
     public function load() {
-        $request = $this->requestStack->getMasterRequest();
+        $request = $this->getMainRequest($this->requestStack);
 
         if($request->query->has($this->parameterName)) {
             // Handle current HTTP-Redirect Binding
@@ -83,7 +84,7 @@ class SessionRequestStorage implements RequestStorageInterface {
     }
 
     public function clear() {
-        $request = $this->requestStack->getMasterRequest();
+        $request = $this->getMainRequest($this->requestStack);
         $session = $request->getSession();
 
         if($session === null) {
@@ -99,7 +100,7 @@ class SessionRequestStorage implements RequestStorageInterface {
     }
 
     public function has(): bool {
-        $request = $this->requestStack->getMasterRequest();
+        $request = $this->getMainRequest($this->requestStack);
 
         if($request->query->has($this->parameterName)) {
             // HTTP-Redirect Binding
@@ -115,5 +116,13 @@ class SessionRequestStorage implements RequestStorageInterface {
         }
 
         return $session->has($this->parameterName);
+    }
+
+    protected function getMainRequest(RequestStack $requestStack): Request {
+        if(method_exists($requestStack, 'getMainRequest')) {
+            return $requestStack->getMainRequest();
+        }
+
+        return $requestStack->getMasterRequest();
     }
 }
