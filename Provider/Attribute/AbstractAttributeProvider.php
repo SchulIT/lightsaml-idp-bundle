@@ -10,7 +10,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 abstract class AbstractAttributeProvider implements AttributeValueProviderInterface {
 
-    private $tokenStorage;
+    private TokenStorageInterface $tokenStorage;
 
     public function __construct(TokenStorageInterface $tokenStorage) {
         $this->tokenStorage = $tokenStorage;
@@ -18,7 +18,7 @@ abstract class AbstractAttributeProvider implements AttributeValueProviderInterf
 
     protected abstract function getValuesForUser(UserInterface $user, $entityId);
 
-    public final function getValues(AssertionContext $context) {
+    public final function getValues(AssertionContext $context): array {
         /** @var ProfileContext $profileContext */
         $profileContext = $context->getParent();
 

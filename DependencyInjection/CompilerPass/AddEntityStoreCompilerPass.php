@@ -22,7 +22,7 @@ class AddEntityStoreCompilerPass implements CompilerPassInterface {
         $definition->addMethodCall('add', [ new Reference($config['sp_entity_store']) ]);
     }
 
-    private function processConfiguration(ConfigurationInterface $configuration, array $configs) {
+    private function processConfiguration(ConfigurationInterface $configuration, array $configs): array {
         $processor = new Processor();
 
         return $processor->processConfiguration($configuration, $configs);

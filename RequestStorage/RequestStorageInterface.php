@@ -8,11 +8,11 @@ namespace SchulIT\LightSamlIdpBundle\RequestStorage;
  * the SAML request is gone and cannot be processed anymore. Thus, the request must be stored in the meantime.
  */
 interface RequestStorageInterface {
-    public function save();
+    public function save(): void;
 
     public function has(): bool;
 
-    public function load();
+    public function load(): void;
 
-    public function clear();
+    public function clear(): void;
 }

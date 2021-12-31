@@ -4,26 +4,25 @@ namespace SchulIT\LightSamlIdpBundle\RequestStorage;
 
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 class SessionRequestStorage implements RequestStorageInterface {
-    private $parameterName;
-    private $requestStack;
+    private string $parameterName;
+    private RequestStack $requestStack;
 
-    private $logger;
+    private LoggerInterface $logger;
 
     const DEFAULT_PARAMETERNAME = 'SAMLRequest';
 
-    public function __construct(RequestStack $requestStack, $parameterName = self::DEFAULT_PARAMETERNAME, LoggerInterface $logger = null) {
+    public function __construct(RequestStack $requestStack, string $parameterName = self::DEFAULT_PARAMETERNAME, LoggerInterface $logger = null) {
         $this->parameterName = $parameterName;
         $this->requestStack = $requestStack;
 
         $this->logger = $logger ?? new NullLogger();
     }
 
-    public function save() {
-        $request = $this->getMainRequest($this->requestStack);
+    public function save(): void {
+        $request = $this->requestStack->getMainRequest();
         $session = $request->getSession();
 
         if($session === null) {
@@ -49,8 +48,8 @@ class SessionRequestStorage implements RequestStorageInterface {
         $this->logger->debug('SAML request stored in current session');
     }
 
-    public function load() {
-        $request = $this->getMainRequest($this->requestStack);
+    public function load(): void {
+        $request = $this->requestStack->getMainRequest();
 
         if($request->query->has($this->parameterName)) {
             // Handle current HTTP-Redirect Binding
@@ -83,8 +82,8 @@ class SessionRequestStorage implements RequestStorageInterface {
         $this->logger->debug('SAML request stored in current request');
     }
 
-    public function clear() {
-        $request = $this->getMainRequest($this->requestStack);
+    public function clear(): void {
+        $request = $this->requestStack->getMainRequest();
         $session = $request->getSession();
 
         if($session === null) {
@@ -100,7 +99,7 @@ class SessionRequestStorage implements RequestStorageInterface {
     }
 
     public function has(): bool {
-        $request = $this->getMainRequest($this->requestStack);
+        $request = $this->requestStack->getMainRequest();
 
         if($request->query->has($this->parameterName)) {
             // HTTP-Redirect Binding
@@ -116,13 +115,5 @@ class SessionRequestStorage implements RequestStorageInterface {
         }
 
         return $session->has($this->parameterName);
-    }
-
-    protected function getMainRequest(RequestStack $requestStack): Request {
-        if(method_exists($requestStack, 'getMainRequest')) {
-            return $requestStack->getMainRequest();
-        }
-
-        return $requestStack->getMasterRequest();
     }
 }

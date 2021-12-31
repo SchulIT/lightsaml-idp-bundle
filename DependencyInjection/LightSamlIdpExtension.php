@@ -29,7 +29,7 @@ class LightSamlIdpExtension extends Extension {
         $definition->setArgument(2, isset($config['logger']) ? new Reference($config['logger']) : null);
     }
 
-    public function getAlias() {
+    public function getAlias(): string {
         return 'lightsaml_idp';
     }
 }

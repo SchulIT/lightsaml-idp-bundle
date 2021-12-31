@@ -6,6 +6,7 @@ use SchulIT\LightSamlIdpBundle\DependencyInjection\CompilerPass\AddEntityStoreCo
 use SchulIT\LightSamlIdpBundle\DependencyInjection\CompilerPass\ReplaceOwnEntityProviderCompilerPass;
 use SchulIT\LightSamlIdpBundle\DependencyInjection\LightSamlIdpExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class LightSamlIdpBundle extends Bundle {
@@ -17,7 +18,7 @@ class LightSamlIdpBundle extends Bundle {
         $container->addCompilerPass(new AddEntityStoreCompilerPass());
     }
 
-    public function getContainerExtension() {
+    public function getContainerExtension(): ?ExtensionInterface {
         return new LightSamlIdpExtension();
     }
 }

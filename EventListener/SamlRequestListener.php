@@ -11,7 +11,7 @@ use Symfony\Component\HttpKernel\KernelEvents;
  */
 class SamlRequestListener implements EventSubscriberInterface {
 
-    private $requestStorage;
+    private RequestStorageInterface $requestStorage;
 
     public function __construct(RequestStorageInterface $requestStorage) {
         $this->requestStorage = $requestStorage;
@@ -21,7 +21,7 @@ class SamlRequestListener implements EventSubscriberInterface {
         $this->requestStorage->save();
     }
 
-    public static function getSubscribedEvents() {
+    public static function getSubscribedEvents(): array {
         return [
             KernelEvents::REQUEST => ['onKernelRequest', 9] // priority must be higher than the priority of the firewall (currently: 8)
         ];
