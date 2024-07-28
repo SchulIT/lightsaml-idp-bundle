@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\Reference;
 
 class ReplaceOwnEntityProviderCompilerPass implements CompilerPassInterface {
 
-    public function process(ContainerBuilder $container) {
+    public function process(ContainerBuilder $container): void {
         $definition = $container->getDefinition('lightsaml.own.entity_descriptor_provider');
         $definition
             ->setPublic(true)

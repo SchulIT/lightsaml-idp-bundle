@@ -11,7 +11,7 @@ use Symfony\Component\DependencyInjection\Reference;
 
 class AddEntityStoreCompilerPass implements CompilerPassInterface {
 
-    public function process(ContainerBuilder $container) {
+    public function process(ContainerBuilder $container): void {
         $configs = $container->getExtensionConfig('lightsaml_idp');
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);

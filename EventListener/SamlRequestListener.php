@@ -17,7 +17,7 @@ class SamlRequestListener implements EventSubscriberInterface {
         $this->requestStorage = $requestStorage;
     }
 
-    public function onKernelRequest() {
+    public function onKernelRequest(): void {
         $this->requestStorage->save();
     }
 

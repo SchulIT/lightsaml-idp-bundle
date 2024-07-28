@@ -16,7 +16,7 @@ abstract class AbstractAttributeProvider implements AttributeValueProviderInterf
         $this->tokenStorage = $tokenStorage;
     }
 
-    protected abstract function getValuesForUser(UserInterface $user, $entityId);
+    protected abstract function getValuesForUser(UserInterface $user, $entityId): array;
 
     public final function getValues(AssertionContext $context): array {
         /** @var ProfileContext $profileContext */
