@@ -7,7 +7,7 @@
         "ext-iconv": "*",
         "symfony/framework-bundle": "^6.4|^7.0",
         "symfony/yaml": "^6.4|^7.0",
-        "lightsaml2/lightsaml-idp": "^2.0",
+        "lightsaml2/lightsaml-idp": "^2.0|^3.0",
         "symfony/security-core": "^6.4|^7.0"
     },
     "autoload": {
