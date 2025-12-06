@@ -12,6 +12,6 @@ class AddEntityStoreCompilerPass implements CompilerPassInterface {
         $serviceId = 'lightsaml.party.sp_entity_descriptor_store';
         $definition = $container->getDefinition($serviceId);
 
-        $definition->addMethodCall('add', [ new Reference($container->getParameter('sp_entity_store')) ]);
+        $definition->addMethodCall('add', [ new Reference($container->getParameter('lightsaml.sp_entity_store')) ]);
     }
 }
